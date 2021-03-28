@@ -3,22 +3,47 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-items = os.getenv('ITEMS')
-sum = os.getenv('SUM')
-order_num = os.getenv('ORDER_NUM')
-print("items", "order_num", "sum")
+items = int(os.getenv('ITEMS'))
+sum = float(os.getenv('SUM'))
+order_num = int(os.getenv('ORDER_NUM'))
+
+# ITEMS = 1
+# SUM = 2.2
+# ORDER_NUM = 333
+
 
 # 1. Касса перепутала номер в очереди с суммой. Надо поменять эти переменные местами
-...print("items", "order_num", "sum")
+sum, order_num = order_num, sum  # поменяли значения местами
+print("sum = " + str(sum) + ";" "\n" + "order_num = " + str(order_num))  # добавили имена для sum и order_num
+# /n перевод на другую строку
+
+print("_____________________")
 
 # 2. Для отчёта боссу, нужно посчитать среднюю стоимость каждой пиццы в заказе
-...print("items" + "sum")
+print("В среднем наша пица стоит: " + str(sum / order_num))  # для среднего значения колличество делится на цену
+
+print("_____________________")
 
 # 3. Если в сумме заказа нету дробей (.00), нужно, чтобы нули не отрисовывались
-...
+if sum != float(1):
+    print("Пицца пепперони. Цена: " + str(int(sum // 1)))
+    print("Спасибо за покупку!")    # // используется для деления без остатка.
+# int - для отображения целых чисел
+
+print("_____________________")
 
 # 4. Если у клиента в номере заказа есть цифра 2, ему положена скидка в 50%
-...
+if order_num % 1 == int(2) or float(2):
+    print(sum / 2)
+    print("Подзравляем!Для вас скидка 50%")
+else:
+    print("Спасибо за покупку!")
+
+print("_____________________")
 
 # 5. Если кол-во пицц в заказе меньше 2, от номер в очереди нужно сократить на 5
-...
+if items < int(2):
+    print(order_num - 5)
+    print("Подзравляем!Подвинте тех петярых!Можно!")
+else:
+    print("Спасибо за покупку!")
