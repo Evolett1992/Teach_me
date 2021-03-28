@@ -1,0 +1,12 @@
+items = os.getenv('ITEMS')
+sum = os.getenv('SUM')
+order_num = os.getenv('ORDER_NUM')
+
+
+
+print (type(sum))
+print (type(items))
+print (type(order_num))
+
+
+if sum > 0:
