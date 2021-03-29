@@ -6,4 +6,3 @@ order_num = os.getenv('ORDER_NUM')
 print (type(sum))
 print (type(items))
 print (type(order_num))
-
